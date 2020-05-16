@@ -28,7 +28,8 @@ public class Client {
 
 		if (subscribed) {
 		    String response = dis.readUTF();
-		    System.out.println("\nServer: \n" + response);
+		    received++;
+		    System.out.println(String.format("\n%d.Server: \n%s", received, response));
 		} else {
 		    System.out.println("\nEnter location:");
 		    String msg = scn.nextLine();
@@ -44,7 +45,8 @@ public class Client {
 		    } else {
 			dos.writeUTF(msg);
 			String response = dis.readUTF();
-			System.out.println("\nServer: \n" + response);
+			received++;
+			System.out.println(String.format("\n%d.Server: \n%s", received, response));
 		    }
 		}
 
